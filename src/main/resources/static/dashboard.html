@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Electricity Insights</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7f6;
+            color: #26332d;
+        }
+
+        nav {
+            background: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: #285943;
+        }
+
+        .logout {
+            color: #285943;
+            text-decoration: none;
+            border: 1px solid #285943;
+            padding: 8px 15px;
+            border-radius: 6px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 50px auto;
+        }
+
+        h1 {
+            color: #234b37;
+        }
+
+        .subtitle {
+            color: #65736c;
+        }
+
+        .cards {
+            margin-top: 35px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            flex: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            color: #285943;
+        }
+
+        .card p {
+            color: #65736c;
+        }
+
+        .actions {
+            margin-top: 35px;
+        }
+
+        .action {
+            display: inline-block;
+            background: #285943;
+            color: white;
+            padding: 12px 18px;
+            margin-right: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">⚡ Electricity Insights</div>
+
+        <a href="index.html" class="logout">Logout</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>Electricity Dashboard</h1>
+
+        <p class="subtitle">
+            Understand your electricity usage and manage your monthly consumption.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Monthly Usage</h3>
+                <p>No usage data added yet.</p>
+            </div>
+
+            <div class="card">
+                <h3>Current Bill</h3>
+                <p>No bill information added yet.</p>
+            </div>
+
+            <div class="card">
+                <h3>Usage Analysis</h3>
+                <p>Add your electricity details to see analysis.</p>
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <a href="#" class="action">Add Monthly Bill</a>
+
+            <a href="#" class="action">Add Appliance</a>
+
+            <a href="#" class="action">Analyse Usage</a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
