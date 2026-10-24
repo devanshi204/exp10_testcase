@@ -1,38 +1,36 @@
 
 trigger:
-- main
+  - main
 
 pool:
   vmImage: ubuntu-latest
 
-resources:
-  containers:
-  - container: mysql
+services:
+  mysql:
     image: mysql:8.0
     env:
-      MYSQL_ROOT_PASSWORD: licet@123
+      MYSQL_ROOT_PASSWORD: 'licet@123'
       MYSQL_DATABASE: electricity
     ports:
-    - 3306:3306
-    options: --health-cmd="mysqladmin ping -h localhost -proot123" --health-interval=10s --health-timeout=5s --health-retries=10
+      - 3306:3306
+    options: >-
+      --health-cmd="mysqladmin ping -h localhost -plicet@123"
+      --health-interval=10s
+      --health-timeout=5s
+      --health-retries=10
 
-jobs:
-- job: Build
-  services:
-    mysql: mysql
-  steps:
+steps:
   - task: Maven@4
     inputs:
       mavenPomFile: 'pom.xml'
-      mavenOptions: '-Xmx3072m'
+      goals: 'clean test'
       javaHomeOption: 'JDKVersion'
       jdkVersionOption: '1.21'
       jdkArchitectureOption: 'x64'
-      goals: 'clean test'
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
     env:
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/electricity
+      SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/electricity
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: licet@123
+      SPRING_DATASOURCE_PASSWORD: 'licet@123'
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
