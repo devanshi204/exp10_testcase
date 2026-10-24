@@ -34,5 +34,5 @@ jobs:
     env:
       SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/electricity
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: Aved_204
+      SPRING_DATASOURCE_PASSWORD: licet@123
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
