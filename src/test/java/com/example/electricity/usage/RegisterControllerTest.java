@@ -52,6 +52,6 @@ class RegisterControllerTest {
                 .param("email", "wrong@example.com")
                 .param("password", "wrongpassword"))
                 .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/login.html"));
+                .andExpect(redirectedUrl("/login.html?error=1"));   
     }
 }
